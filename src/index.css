@@ -1,0 +1,50 @@
+:root {
+  --cream: #f5efe6;
+  --kraft: #d4a96a;
+  --kraft-dark: #b8864e;
+  --blush: #f2a8a8;
+  --ink: #2c1810;
+  --faded-ink: #6b4c3b;
+  --sage: #8fad88;
+
+  font-family: 'Special Elite', 'Courier New', monospace;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--ink);
+  background-color: var(--kraft-dark); /* fallback until back.png loads */
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1, h2, h3, .font-display {
+  font-family: 'Special Elite', 'Courier New', monospace;
+}
+
+button {
+  font-family: 'Special Elite', 'Courier New', monospace;
+  cursor: pointer;
+}
+
+input, textarea {
+  font-family: 'Special Elite', 'Courier New', monospace;
+}
+
+a {
+  color: var(--kraft-dark);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}

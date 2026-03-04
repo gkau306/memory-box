@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 80" fill="none" stroke="#b8864e" stroke-width="2">
+  <path d="M10 20 L60 50 L110 20 L110 70 L10 70 Z" fill="#f5efe6"/>
+  <path d="M10 20 L60 50 L110 20" fill="none" stroke="#b8864e"/>
+  <rect x="25" y="35" width="70" height="25" rx="1" fill="#e8e0d5" opacity="0.8"/>
+  <text x="60" y="52" text-anchor="middle" font-size="8" fill="#6b4c3b" font-family="sans-serif">letter</text>
+</svg>
