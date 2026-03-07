@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { useBoxState } from './hooks/useBoxState';
 import { useShareLink, useDecodeBoxFromHash } from './hooks/useShareLink';
 import LandingPage from './components/LandingPage';
@@ -46,7 +46,7 @@ function AppContent() {
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div className="app-wrap">
         <div
           className="app-bg"
@@ -57,6 +57,6 @@ export default function App() {
           <AppContent />
         </div>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
