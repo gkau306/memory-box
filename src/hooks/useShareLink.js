@@ -1,21 +1,23 @@
 import { useMemo } from 'react';
-import { useLocation } from 'react-router-dom';
 import { encodeBoxData, decodeBoxData } from '../utils/encoder';
 
 export function useShareLink(boxData) {
   const shareURL = useMemo(() => {
     if (!boxData?.meta?.to) return '';
     const encoded = encodeBoxData(boxData);
-    return `${window.location.origin}${window.location.pathname}#${encoded}`;
+    // Use query param instead of hash to avoid conflict with HashRouter
+    return `${window.location.origin}${window.location.pathname}?box=${encoded}`;
   }, [boxData]);
 
   return { shareURL };
 }
 
-export function useDecodeBoxFromHash() {
-  const location = useLocation();
+export function useDecodeBoxFromURL() {
+  // Use window.location.search because HashRouter's location.search
+  // refers to search params within the hash, not the actual URL
+  const params = new URLSearchParams(window.location.search);
+  const encoded = params.get('box');
   return useMemo(() => {
-    const hash = location.hash.slice(1);
-    return decodeBoxData(hash);
-  }, [location.hash]);
+    return decodeBoxData(encoded);
+  }, [encoded]);
 }

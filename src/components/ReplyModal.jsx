@@ -10,7 +10,7 @@ export default function ReplyModal({ isOpen, boxData, onClose }) {
     if (!replyText.trim() || !boxData) return '';
     const withReply = { ...boxData, reply: replyText.trim() };
     const encoded = encodeBoxData(withReply);
-    return `${window.location.origin}${window.location.pathname}#${encoded}`;
+    return `${window.location.origin}${window.location.pathname}?box=${encoded}`;
   })();
 
   const handleCopy = async () => {

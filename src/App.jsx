@@ -1,6 +1,6 @@
-import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import { useBoxState } from './hooks/useBoxState';
-import { useShareLink, useDecodeBoxFromHash } from './hooks/useShareLink';
+import { useShareLink, useDecodeBoxFromURL } from './hooks/useShareLink';
 import LandingPage from './components/LandingPage';
 import CreatorCanvas from './components/CreatorCanvas';
 import BoxReveal from './components/BoxReveal';
@@ -8,9 +8,7 @@ import backImg from './assets/back.png';
 import './App.css';
 
 function AppContent() {
-  const location = useLocation();
-  const hasHash = !!location.hash;
-  const decodedBox = useDecodeBoxFromHash();
+  const decodedBox = useDecodeBoxFromURL();
   const {
     boxData,
     setMeta,
@@ -20,7 +18,7 @@ function AppContent() {
   } = useBoxState();
   const { shareURL } = useShareLink(boxData);
 
-  if (hasHash && decodedBox) {
+  if (decodedBox) {
     return <BoxReveal boxData={decodedBox} />;
   }
 
